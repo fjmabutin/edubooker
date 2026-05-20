@@ -1,1 +1,1 @@
-# 🗓️ **RoomSync**
+# 🗓️ **EduBooker**

@@ -47,8 +47,8 @@ body{
 /* MAIN CONTENT */
 
 .main-content{
-    margin-left: 260px;
-    width: calc(100% - 260px);
+    margin-left: 220px;
+    width: calc(100% - 220px);
     padding: 40px;
 }
 

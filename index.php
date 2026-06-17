@@ -8,10 +8,10 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="style/style.css">
-
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body class="home">
 
     <!-- HEADER -->
@@ -31,15 +31,12 @@
                 LOGIN
             </a>
         </div>
-
     </header>
-
 
     <!-- HERO IMAGE -->
     <section class="hero-image">
         <img src="assets/schoolBg.jpg" alt="School Background">
     </section>
-
 
     <!-- HERO CONTENT -->
     <section class="hero-content">
@@ -61,13 +58,10 @@
             </a>
 
         </div>
-
     </section>
-    
-
 </body>
 
-    <footer class="site-footer">
+<footer class="site-footer">
 
     <div class="footer-container">
 
@@ -79,24 +73,22 @@
             </p>
 
             <div class="socials">
+                <a href="#">
+                    <img src="assets/igLogo.png" alt="Instagram">
+                </a>
 
-    <a href="#">
-        <img src="assets/igLogo.png" alt="Instagram">
-    </a>
+                <a href="#">
+                    <img src="assets/twitterLogo.png" alt="Twitter">
+                </a>
 
-    <a href="#">
-        <img src="assets/twitterLogo.png" alt="Twitter">
-    </a>
+                <a href="#">
+                    <img src="assets/fbLogo.png" alt="Facebook">
+                </a>
 
-    <a href="#">
-        <img src="assets/fbLogo.png" alt="Facebook">
-    </a>
-
-    <a href="#">
-        <img src="assets/linkedinLogo.png" alt="LinkedIn">
-    </a>
-
-</div>
+                <a href="#">
+                    <img src="assets/linkedinLogo.png" alt="LinkedIn">
+                </a>
+            </div>
 
             <p class="copyright">
                 © 2026 EduBooker. All rights reserved.
@@ -127,8 +119,6 @@
             <a href="#">Terms of Service</a>
             <a href="#">Cookie Policy</a>
         </div>
-
     </div>
-
 </footer>
 </html>

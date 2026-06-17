@@ -1,18 +1,14 @@
-<?php include '../includes/sidebar.php'; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>User List</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
     <!-- SIDEBAR CSS (THIS IS CORRECT) -->
+    <!-- Piczon: Sidebar.css does not exist. I recommend to remove this line-->
     <link rel="stylesheet" href="../includes/sidebar.css">
 
     <style>
@@ -229,84 +225,83 @@
             color: #8b0000;
         }
     </style>
-
 </head>
 
 <body>
+    <?php include_once '../includes/sidebar.php'; ?>
 
-<div class="main-content">
+    <div class="main-content">
 
-    <!-- HEADER -->
-    <div class="top-section">
-        <div class="header">
-            <h1>User Management</h1>
-        </div>
-
-        <div class="top-buttons">
-            <button class="add-btn">
-                <i class="fa-solid fa-plus"></i>
-                <a href="addUser.php" style="color:white; text-decoration:none;">
-                    Add User
-                </a>
-            </button>
-<a href="../assets/users.csv" download class="export-btn" style="color:blue; text-decoration:none;">
-    <i class="fa-solid fa-download"></i>
-    Export CSV
-</a>
-        </div>
-    </div>
-
-    <!-- YOUR DATA KEPT EXACTLY SAME -->
-    <div class="dashboard-cards">
-        <div class="card">
-            <h4>Total Users</h4>
-            <h1>30</h1>
-        </div>
-
-        <div class="card">
-            <h4 style="color:#2d5be3;">Students</h4>
-            <h1>67</h1>
-        </div>
-
-        <div class="card">
-            <h4 style="color:#557c2d;">Faculty / Staff</h4>
-            <h1>15</h1>
-        </div>
-    </div>
-
-    <!-- TABLE + PROFILE -->
-    <div class="user-container">
-
-        <div class="table-container">
-
-            <div class="search-box">
-                <input type="text" placeholder="Search user...">
+        <!-- HEADER -->
+        <div class="top-section">
+            <div class="header">
+                <h1>User Management</h1>
             </div>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>User</th>
-                        <th>Role</th>
-                        <th>Department</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
+            <div class="top-buttons">
+                <button class="add-btn">
+                    <i class="fa-solid fa-plus"></i>
+                    <a href="addUser.php" style="color:white; text-decoration:none;">
+                        Add User
+                    </a>
+                </button>
+                <a href="../assets/users.csv" download class="export-btn" style="color:blue; text-decoration:none;">
+                    <i class="fa-solid fa-download"></i>
+                    Export CSV
+                </a>
+            </div>
+        </div>
 
-                <tbody>
+        <!-- YOUR DATA KEPT EXACTLY SAME -->
+        <div class="dashboard-cards">
+            <div class="card">
+                <h4>Total Users</h4>
+                <h1>30</h1>
+            </div>
 
-                    <tr>
-                        <td>
-                            <div class="user-info">
-                                <img src="../assets/AngelHearth.png">
-                                <span>Angel Hearth Miole</span>
-                            </div>
-                        </td>
-                        <td>Student</td>
-                        <td>BS Information Tech</td>
-                        <td><span class="disabled-status">DISABLED</span></td>
-                        <td>
+            <div class="card">
+                <h4 style="color:#2d5be3;">Students</h4>
+                <h1>67</h1>
+            </div>
+
+            <div class="card">
+                <h4 style="color:#557c2d;">Faculty / Staff</h4>
+                <h1>15</h1>
+            </div>
+        </div>
+
+        <!-- TABLE + PROFILE -->
+        <div class="user-container">
+
+            <div class="table-container">
+
+                <div class="search-box">
+                    <input type="text" placeholder="Search user...">
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Role</th>
+                            <th>Department</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="user-info">
+                                    <img src="../assets/AngelHearth.png" alt="ANGEL">
+                                    <span>Angel Hearth Miole</span>
+                                </div>
+                            </td>
+                            <td>Student</td>
+                            <td>BS Information Tech</td>
+                            <td><span class="disabled-status">DISABLED</span></td>
+                            <td>
                             <button class="action-btn"
                                 data-name="Angel Hearth Miole"
                                 data-role="Student"
@@ -317,20 +312,20 @@
                                 data-status="ACTIVE">
                                 <i class="fa-solid fa-bars"></i>
                             </button>
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td>
-                            <div class="user-info">
-                                <img src="../assets/DaneMacnel.png">
-                                <span>Dane Macnel Perez</span>
-                            </div>
-                        </td>
-                        <td>Admin</td>
-                        <td>Admin Office</td>
-                        <td><span class="active-status">ACTIVE</span></td>
-                        <td>
+                        <tr>
+                            <td>
+                                <div class="user-info">
+                                    <img src="../assets/DaneMacnel.png" alt="DANE">
+                                    <span>Dane Macnel Perez</span>
+                                </div>
+                            </td>
+                            <td>Admin</td>
+                            <td>Admin Office</td>
+                            <td><span class="active-status">ACTIVE</span></td>
+                            <td>
                             <button class="action-btn"
                                 data-name="Dane Macnel Perez"
                                 data-role="Admin"
@@ -341,81 +336,75 @@
                                 data-status="ACTIVE">
                                 <i class="fa-solid fa-bars"></i>
                             </button>
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-                </tbody>
-            </table>
+            <!-- PROFILE -->
+            <div class="user-profile" id="userProfile">
 
+                <h2>User Profile</h2>
+
+                <div class="profile-top">
+                    <img src="../assets/defaultProfile.png" alt="default">
+
+                    <div>
+                        <h3 id="profileName">User Name</h3>
+                        <p id="profileRole">Role</p>
+                        <span class="active-status" id="profileStatus">ACTIVE</span>
+                    </div>
+                </div>
+
+                <div class="profile-details">
+                    <div class="detail">
+                        <strong>Email</strong>
+                        <p id="profileEmail">-</p>
+                    </div>
+
+                    <div class="detail">
+                        <strong>Department</strong>
+                        <p id="profileDepartment">-</p>
+                    </div>
+
+                    <div class="detail">
+                        <strong>Student ID</strong>
+                        <p id="profileStudentID">-</p>
+                    </div>
+
+                    <div class="detail">
+                        <strong>Phone</strong>
+                        <p id="profilePhone">-</p>
+                    </div>
+                </div>
+
+                <div class="profile-buttons">
+                    <button><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
         </div>
-
-        <!-- PROFILE -->
-        <div class="user-profile" id="userProfile">
-
-            <h2>User Profile</h2>
-
-            <div class="profile-top">
-                <img src="../assets/defaultProfile.png">
-                <div>
-                    <h3 id="profileName">User Name</h3>
-                    <p id="profileRole">Role</p>
-                    <span class="active-status" id="profileStatus">ACTIVE</span>
-                </div>
-            </div>
-
-            <div class="profile-details">
-                <div class="detail">
-                    <label>Email</label>
-                    <p id="profileEmail">-</p>
-                </div>
-
-                <div class="detail">
-                    <label>Department</label>
-                    <p id="profileDepartment">-</p>
-                </div>
-
-                <div class="detail">
-                    <label>Student ID</label>
-                    <p id="profileStudentID">-</p>
-                </div>
-
-                <div class="detail">
-                    <label>Phone</label>
-                    <p id="profilePhone">-</p>
-                </div>
-            </div>
-
-            <div class="profile-buttons">
-                <button><i class="fa-solid fa-pen-to-square"></i></button>
-                <button><i class="fa-solid fa-trash"></i></button>
-            </div>
-
-        </div>
-
     </div>
 
-</div>
+    <script>
+        const actionButtons = document.querySelectorAll('.action-btn');
+        const userProfile = document.getElementById('userProfile');
 
-<script>
-const actionButtons = document.querySelectorAll('.action-btn');
-const userProfile = document.getElementById('userProfile');
+        actionButtons.forEach(button => {
 
-actionButtons.forEach(button => {
-    button.addEventListener('click', () => {
+            button.addEventListener('click', () => {
+                userProfile.classList.add('active');
 
-        userProfile.classList.add('active');
-
-        document.getElementById('profileName').innerText = button.dataset.name;
-        document.getElementById('profileRole').innerText = button.dataset.role;
-        document.getElementById('profileEmail').innerText = button.dataset.email;
-        document.getElementById('profileDepartment').innerText = button.dataset.department;
-        document.getElementById('profileStudentID').innerText = button.dataset.studentid;
-        document.getElementById('profilePhone').innerText = button.dataset.phone;
-        document.getElementById('profileStatus').innerText = button.dataset.status;
-
-    });
-});
-</script>
-
+                document.getElementById('profileName').innerText = button.dataset.name;
+                document.getElementById('profileRole').innerText = button.dataset.role;
+                document.getElementById('profileEmail').innerText = button.dataset.email;
+                document.getElementById('profileDepartment').innerText = button.dataset.department;
+                document.getElementById('profileStudentID').innerText = button.dataset.studentid;
+                document.getElementById('profilePhone').innerText = button.dataset.phone;
+                document.getElementById('profileStatus').innerText = button.dataset.status;
+            });
+        });
+    </script>
 </body>
 </html>

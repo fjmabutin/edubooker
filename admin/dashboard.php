@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+```
+<link rel="stylesheet" href="../style/system.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+```
+
+</head>
+
+<?php include '../includes/sidebar.php'; ?>
+
+<body>
+
+<!-- OVERLAY -->
+
+<div id="overlay" onclick="closeLogout()" style="
+    position: fixed;
+    top: 0;
+    left: 220px;
+    width: calc(100% - 220px);
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 999;
+"></div>
+
+<!-- LOGOUT MODAL -->
+
+<div id="logoutModal" style="
+    position: fixed;
+    top: 50%;
+    left: calc(50% + 110px);
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    display: none;
+    z-index: 1000;
+">
+    <h2 style="color:#8b0000;">Confirm Logout</h2>
+    <p>Are you sure you want to logout?</p>
+
+```
+<button onclick="closeLogout()">Cancel</button>
+<button onclick="window.location.href='../logout.php'">
+    Yes, logout
+</button>
+```
+
+</div>
+
+<script src="../js/logout.js"></script>
+
+<div class="system-container">
+
+```
+<style>
+    .main-content {
+        margin-left: 220px;
+        padding: 35px;
+    }
+</style>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+
+    <!-- TOP HEADER -->
+    <div class="top-header">
+        <div class="header">
+            <h1>Hello, Admin!</h1>
+            <p>Manage reservations, rooms, and requests</p>
+        </div>
+
+        <div class="header-icons">
+            <i class="fa-regular fa-bell"></i>
+            <div class="profile">
+                <img src="../assets/profilePic.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- DASHBOARD CARDS -->
+    <div class="dashboard-cards">
+        <div class="card">
+            <h3>Total Reservations</h3>
+            <h1>30</h1>
+        </div>
+
+        <div class="card">
+            <h3>Available Rooms</h3>
+            <h1>67</h1>
+        </div>
+
+        <div class="card">
+            <h3 class="pending-text">Pending Request</h3>
+            <h1>15</h1>
+        </div>
+    </div>
+
+    <!-- RECENT ACTIVITY -->
+    <div class="activity-container">
+
+        <div class="activity-header">
+            <h2>Recent Requests</h2>
+            <div class="search-box">
+                <input type="text">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+
+        <!-- TABLE -->
+        <table class="activity-table">
+            <thead>
+                <tr>
+                    <th>Room</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Requested by</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>CS 101</td>
+                    <td>April 25, 2026</td>
+                    <td>8:00 AM - 9:00 AM</td>
+                    <td>Dane Macnel Perez</td>
+                    <td>
+                        <span class="status approved">APPROVED</span>
+                    </td>
+                    <td><i class="fa-solid fa-bars"></i></td>
+                </tr>
+
+                <tr>
+                    <td>LAB 201</td>
+                    <td>April 25, 2026</td>
+                    <td>9:00 AM - 10:00 AM</td>
+                    <td>Rugilzon Piczon</td>
+                    <td>
+                        <span class="status pending">PENDING</span>
+                    </td>
+                    <td><i class="fa-solid fa-bars"></i></td>
+                </tr>
+
+                <tr>
+                    <td>IT 303</td>
+                    <td>April 24, 2026</td>
+                    <td>10:00 AM - 10:30 AM</td>
+                    <td>Irven Macalam Jr.</td>
+                    <td>
+                        <span class="status rejected">REJECTED</span>
+                    </td>
+                    <td><i class="fa-solid fa-bars"></i></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+</div>
+
+</body>
+</html>

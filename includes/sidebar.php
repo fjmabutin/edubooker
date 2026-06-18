@@ -4,7 +4,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <style>
 
 .sidebar{
-    width: 200px;
+    width: 230px;
     height: 100vh;
     background: #8b0000;
 
@@ -38,15 +38,15 @@ $current_page = basename($_SERVER['PHP_SELF']);
     border-radius:50%;
 }
 
-.logo-text h2{
+.logo-text h1{
     color: white;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 700;
 }
 
 .logo-text p{
     color: white;
-    font-size: 10px;
+    font-size: 13px;
 }
 
 /* NAVIGATION */
@@ -72,7 +72,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
     transition: 0.3s;
 
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 500;
 }
 
@@ -102,7 +102,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
         <img src="../assets/eduBookerLogo.png" alt="Logo">
 
         <div class="logo-text">
-            <h2>EduBooker</h2>
+            <h1>EduBooker</h1>
 
             <p>PUP iTech Classroom Tracker</p>
         </div>

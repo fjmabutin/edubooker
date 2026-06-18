@@ -2,8 +2,8 @@
     session_start();
 
     // SAMPLE DATA (palitan mo later from database)
-    $fullName = "Francine Joy D. Mabutin";
-    $email = "francine@gmail.com";
+    $fullName = "Dane Macnel Perez";
+    $email = "dane@gmail.com";
     $studentId = "2025-05565-MN-0";
     $course = "Diploma in Information Technology";
     $status = "ENROLLED";
@@ -80,7 +80,12 @@
             height:120px;
             border-radius:50%;
             background:#ddd;
+            background-image: url('../assets/DaneMacnel.png');
+            background-size: cover;
+            background-position: center;
+            margin: 20px 0 5px 10px; 
         }
+
 
         .form-group{
             margin-bottom:15px;
@@ -120,15 +125,19 @@
 
         /* STATUS */
         .status{
-            background:#c8f7c5;
-            color:green;
-            padding:5px 10px;
-            border-radius:6px;
-            display:inline-block;
-            font-size:12px;
-            margin: 15px 0;
-            margin: 15px 0 15px 20px; 
-        }
+    background:#c8f7c5;
+    color:green;
+    padding:5px 10px;
+    border-radius:6px;
+    display:inline-block;
+    font-size:12px;
+    margin: 15px 0 10px 25px; /* ← dagdagan mo yung 40 */
+}
+
+.page-title{
+    font-weight: 700;
+}
+
     </style>
 </head>
 

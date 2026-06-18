@@ -408,3 +408,91 @@ body{
     display: none;
     z-index: 1001;
 }
+
+/* ============================= */
+/* ADDED FEATURES (NEW) */
+/* ============================= */
+
+/* TABLE SCROLL */
+.table-wrapper {
+    max-height: 300px;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+
+/* FIXED HEADER */
+.activity-table thead th {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 2;
+}
+
+.activity-table thead {
+    background: white;
+}
+
+/* AVAILABLE TEXT */
+.available-text{
+    color: green;
+}
+
+/* NOTIFICATION */
+.notif-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.notif-dot {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 8px;
+    height: 8px;
+    background: red;
+    border-radius: 50%;
+}
+
+.notif-box {
+    position: absolute;
+    top: 25px;
+    right: 0;
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 10px;
+    display: none;
+    z-index: 1000;
+}
+
+.notif-box h4 {
+    margin: 5px 10px;
+    color: #8b0000;
+}
+
+.notif-item {
+    padding: 10px;
+    border-radius: 8px;
+    margin: 5px 0;
+    transition: 0.2s;
+}
+
+.notif-item:hover {
+    background: #f5f5f5;
+}
+
+.notif-item.unread {
+    background: #ffffff;
+    border-left: 2px solid gray;
+}
+
+.notif-item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.notif-item span {
+    font-size: 12px;
+    color: gray;
+}

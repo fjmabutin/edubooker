@@ -556,12 +556,14 @@
                 </div>
             </div>
 
+            
+
             <!-- RIGHT SIDE -->
             <div class="request-details" id="requestDetails">
                 <h2>Request Details</h2>
 
                 <div class="details-profile">
-                    <img src="../assets/AngelHearth.png" alt="ANGEL">
+                    <img src="../assets/DaneMacnel.png" alt="DANE">
 
                     <div>
                         <h3 id="detailName">
@@ -628,108 +630,159 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
 
-            // ===== VIEW DETAILS (your old code) =====
-            const detailButtons = document.querySelectorAll('.details-btn');
-            const detailsPanel = document.getElementById('requestDetails');
+<script>
+document.addEventListener("DOMContentLoaded", function() {
 
-            detailButtons.forEach(button => {
-                button.addEventListener('click', () => {
+    // ===== VIEW DETAILS (your old code) =====
+    const detailButtons = document.querySelectorAll('.details-btn');
+    const detailsPanel = document.getElementById('requestDetails');
 
-                    detailsPanel.classList.add('active');
+    detailButtons.forEach(button => {
+        button.addEventListener('click', () => {
 
-                    document.getElementById('detailName').innerText = button.dataset.name;
-                    document.getElementById('detailRoom').innerText = button.dataset.room;
-                    document.getElementById('detailDate').innerText = button.dataset.date;
-                    document.getElementById('detailTime').innerText = button.dataset.time;
-                    document.getElementById('detailPurpose').innerText = button.dataset.purpose;
+            detailsPanel.classList.add('active');
 
-                    // View details data
-                    document.querySelectorAll('.details-buttons .action-btn').forEach(btn => {
-                        btn.dataset.name    = button.dataset.name;
-                        btn.dataset.room    = button.dataset.room;
-                        btn.dataset.date    = button.dataset.date;
-                        btn.dataset.time    = button.dataset.time;
-                        btn.dataset.purpose = button.dataset.purpose;
-                    });
-                });
-            });
+            document.getElementById('detailName').innerText = button.dataset.name;
+            document.getElementById('detailRoom').innerText = button.dataset.room;
+            document.getElementById('detailDate').innerText = button.dataset.date;
+            document.getElementById('detailTime').innerText = button.dataset.time;
+            document.getElementById('detailPurpose').innerText = button.dataset.purpose;
 
-            // ===== APPROVE / REJECT =====
-            const actionButtons = document.querySelectorAll('.action-btn');
-            const modal = document.getElementById('modalOverlay');
-
-            actionButtons.forEach(button => {
-                button.addEventListener('click', () => {
-
-                    modal.style.display = "flex";
-
-                    document.getElementById('mName').innerText = button.dataset.name;
-                    document.getElementById('mRoom').innerText = button.dataset.room;
-                    document.getElementById('mDate').innerText = button.dataset.date;
-                    document.getElementById('mTime').innerText = button.dataset.time;
-                    document.getElementById('mPurpose').innerText = button.dataset.purpose;
-
-                    if(button.dataset.action === "approve"){
-                        document.getElementById('modalTitle').innerText = "Approve Request";
-                        document.getElementById('confirmBtn').innerText = "Yes, Approve";
-                        document.getElementById('confirmBtn').className = "approve-btn";
-                        document.getElementById('rejectFields').style.display = "none";
-                    } else {
-                        document.getElementById('modalTitle').innerText = "Reject Request";
-                        document.getElementById('confirmBtn').innerText = "Yes, Reject";
-                        document.getElementById('confirmBtn').className = "reject-btn";
-                        document.getElementById('rejectFields').style.display = "block";
-                    }
-                });
-            });
         });
+    });
 
-        // Close modal (outside is fine)
-        function closeModal(){
-            document.getElementById('modalOverlay').style.display = "none";
+    // ===== TAB SWITCHING =====
+const tabs = document.querySelectorAll('.request-tabs button');
+const contents = document.querySelectorAll('.tab-content');
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+
+        // REMOVE ACTIVE LINE
+        tabs.forEach(t => t.style.borderBottom = "none");
+
+        // ADD LINE TO CLICKED TAB
+        tab.style.borderBottom = "3px solid #8b0000";
+
+        // HIDE ALL CONTENT
+        contents.forEach(c => c.style.display = "none");
+
+        // SHOW SELECTED
+        if(tab.classList.contains('pending-tab')){
+            document.querySelector('[data-tab="pending"]').style.display = "block";
         }
-    </script>
+        else if(tab.classList.contains('approved-tab')){
+            document.querySelector('[data-tab="approved"]').style.display = "block";
+        }
+        else if(tab.classList.contains('rejected-tab')){
+            document.querySelector('[data-tab="rejected"]').style.display = "block";
+        }
 
-    <!-- MODAL -->
-    <div class="modal-overlay" id="modalOverlay">
+    });
+});
 
-        <div class="modal" id="modalBox">
+// UPDATE DETAILS ACTION BUTTONS
+const approveBtn = document.querySelector('.details-buttons .approve-btn');
+const rejectBtn = document.querySelector('.details-buttons .reject-btn');
 
-            <button type="button" class="modal-close" onclick="closeModal()" aria-label="Close modal">×</button>
-            <h2 id="modalTitle">Approve Request</h2>
-            <p id="modalText">
-                Are you sure you want to proceed?
-            </p>
+approveBtn.dataset.name = button.dataset.name;
+approveBtn.dataset.room = button.dataset.room;
+approveBtn.dataset.date = button.dataset.date;
+approveBtn.dataset.time = button.dataset.time;
+approveBtn.dataset.purpose = button.dataset.purpose;
 
-            <div id="modalDetails" style="margin-bottom:15px; font-size:14px;">
-                <strong id="mName"></strong><br>
-                <span id="mRoom"></span><br>
-                <span id="mDate"></span><br>
-                <span id="mTime"></span><br>
-                <span id="mPurpose"></span>
-            </div>
+rejectBtn.dataset.name = button.dataset.name;
+rejectBtn.dataset.room = button.dataset.room;
+rejectBtn.dataset.date = button.dataset.date;
+rejectBtn.dataset.time = button.dataset.time;
+rejectBtn.dataset.purpose = button.dataset.purpose;
 
-            <!-- REJECT EXTRA -->
-            <div id="rejectFields" style="display:none;">
-                <select style="width:100%; padding:10px; margin-bottom:10px;">
-                    <option>Room not available</option>
-                    <option>Schedule conflict</option>
-                    <option>Incomplete details</option>
-                </select>
+const confirmBtn = document.getElementById('confirmBtn');
 
-                <textarea placeholder="Additional notes..."
-                    style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
-                </textarea>
-            </div>
+if(button.dataset.action === "approve"){
+    confirmBtn.innerText = "Yes, Approve";
+} else {
+    confirmBtn.innerText = "Yes, Reject";
+}
 
-            <div class="modal-actions">
-                <button class="reject-btn" onclick="closeModal()">Cancel</button>
-                <button class="approve-btn" id="confirmBtn">Yes, Reject</button>
-            </div>
+    // ===== APPROVE / REJECT =====
+    const actionButtons = document.querySelectorAll('.action-btn');
+    const modal = document.getElementById('modalOverlay');
+
+    actionButtons.forEach(button => {
+        button.addEventListener('click', () => {
+
+            modal.style.display = "flex";
+
+            document.getElementById('mName').innerText = button.dataset.name;
+            document.getElementById('mRoom').innerText = button.dataset.room;
+            document.getElementById('mDate').innerText = button.dataset.date;
+            document.getElementById('mTime').innerText = button.dataset.time;
+            document.getElementById('mPurpose').innerText = button.dataset.purpose;
+
+            if(button.dataset.action === "approve"){
+                document.getElementById('modalTitle').innerText = "Approve Request";
+                document.getElementById('rejectFields').style.display = "none";
+            } else {
+                document.getElementById('modalTitle').innerText = "Reject Request";
+                document.getElementById('rejectFields').style.display = "block";
+            }
+
+        });
+    });
+
+});
+
+// Close modal (outside is fine)
+function closeModal(){
+    document.getElementById('modalOverlay').style.display = "none";
+}
+</script>
+<!-- MODAL -->
+
+<div class="modal-overlay" id="modalOverlay">
+
+    <div class="modal" id="modalBox">
+
+        <span class="modal-close" onclick="closeModal()">×</span>
+
+        <h2 id="modalTitle">Approve Request</h2>
+
+        <p id="modalText">
+            Are you sure you want to proceed?
+        </p>
+
+        <div id="modalDetails" style="margin-bottom:15px; font-size:14px;">
+            <strong id="mName"></strong><br>
+            <span id="mRoom"></span><br>
+            <span id="mDate"></span><br>
+            <span id="mTime"></span><br>
+            <span id="mPurpose"></span>
         </div>
+
+        <!-- REJECT EXTRA -->
+        <div id="rejectFields" style="display:none;">
+
+            <select style="width:100%; padding:10px; margin-bottom:10px;">
+                <option>Room not available</option>
+                <option>Schedule conflict</option>
+                <option>Incomplete details</option>
+            </select>
+
+            <textarea placeholder="Additional notes..."
+                style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;"></textarea>
+
+        </div>
+
+        <div class="modal-actions">
+    <button class="reject-btn" onclick="closeModal()">Cancel</button>
+    <button class="approve-btn" id="confirmBtn">Yes, Reject</button>
+</div>
+
     </div>
+
+</div>
+
 </body>
 </html>

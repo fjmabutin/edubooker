@@ -86,7 +86,7 @@
         }
 
         .card h1{
-            font-size: 50px;
+            font-size: 40px;
         }
 
         .user-container{
@@ -277,6 +277,7 @@
 
                 <div class="search-box">
                     <input type="text" placeholder="Search user...">
+                    <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
 
                 <table>

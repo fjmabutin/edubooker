@@ -76,6 +76,20 @@
     border-radius: 10px;
 }
 
+
+        .search-box{
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .search-box input{
+            width: 250px;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+        }
     
 </style>
 
@@ -86,7 +100,7 @@
     <div class="top-header">
         <div class="header">
             <h1 style="color: #8b0000;">Hello, Admin!</h1>
-            <p style="color: #9b6d6d;">Manage reservations, rooms, and requests</p>
+            <p style="color: #9b6d6d;">Track, manage, and monitor everything in one place.</p>
         </div>
 
         <div class="header-icons"><div class="notif-container">
@@ -115,7 +129,7 @@
 </div>
             <div class="profile">
     <a href="settings.php">
-        <img src="../assets/FrancineJoy.png" alt="">
+        <img src="../assets/DaneMacnel.png" alt="">
     </a>
 </div>
         </div>
@@ -145,8 +159,9 @@
         <div class="activity-header">
             <h2 style='font-size: 25px; color: #8b0000;'>Recent Requests</h2>
             <div class="search-box">
-                <input type="text">
+                  <input type="text" placeholder="Search user...">
                 <i class="fa-solid fa-magnifying-glass"></i>
+        
             </div>
         </div>
 

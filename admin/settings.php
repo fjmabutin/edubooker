@@ -111,7 +111,7 @@
         /* FLEX */
         .flex{
             display:flex;
-            gap:20px;
+            gap: 30px;
         }
 
         .half{
@@ -126,7 +126,8 @@
             border-radius:6px;
             display:inline-block;
             font-size:12px;
-            margin-top:10px;
+            margin: 15px 0;
+            margin: 15px 0 15px 20px; 
         }
     </style>
 </head>

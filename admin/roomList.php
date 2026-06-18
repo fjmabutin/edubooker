@@ -128,7 +128,7 @@ body{
 <div class="main-content">
 
     <div class="header">
-        <h1 style='font-size: 25px; color: #8b0000;'>Room Management</h1>
+        <h1 style='font-size: 30px; color: #8b0000;'>Room Management</h1>
     </div>
 
     <!-- ROOM 1 -->

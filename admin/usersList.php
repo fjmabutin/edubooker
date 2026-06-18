@@ -235,7 +235,7 @@
         <!-- HEADER -->
         <div class="top-section">
             <div class="header">
-                <h1>User Management</h1>
+                 <h1 style='font-size: 30px; color: #8b0000;'>User Management</h1>
             </div>
 
             <div class="top-buttons">

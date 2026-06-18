@@ -1,7 +1,11 @@
 <?php
 session_start();
-$_SESSION = [];
+
+// destroy session
+session_unset();
 session_destroy();
 
+// redirect to index.php
 header("Location: index.php");
 exit();
+?>

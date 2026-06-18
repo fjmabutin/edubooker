@@ -152,22 +152,22 @@
                 <div style="flex:1;">
 
                     <div class="form-group">
-                        <strong>Full Name</strong>
+                        <strong style="font-size: 14px;"> Full Name</strong>
                         <input type="text" value="<?php echo $fullName; ?>">
                     </div>
 
                     <div class="form-group">
-                        <strong>Email Address</strong>
+                        <strong style="font-size: 14px;"> Email Address</strong>
                         <input type="text" value="<?php echo $email; ?>">
                     </div>
 
                     <div class="form-group">
-                        <strong>Student ID</strong>
+                        <strong style="font-size: 14px;">Student ID</strong>
                         <input type="text" value="<?php echo $studentId; ?>">
                     </div>
 
                     <div class="form-group">
-                        <strong>Course</strong>
+                        <strong style="font-size: 14px;">Course</strong>
                         <input type="text" value="<?php echo $course; ?>">
                     </div>
 
@@ -188,12 +188,12 @@
                 <form method="POST">
 
                 <div class="form-group">
-                    <strong>Current Password</strong>
+                    <strong style="font-size: 14px;">Current Password</strong>
                     <input type="password" name="current_password">
                 </div>
 
                 <div class="form-group">
-                    <strong>New Password</strong>
+                    <strong style="font-size: 14px;">New Password</strong>
                     <input type="password" name="new_password">
                 </div>
 
@@ -206,7 +206,7 @@
                 <h3>Preference</h3>
 
                 <div class="form-group">
-                    <strong>Theme</strong>
+                    <strong style="font-size: 14px;">Theme</strong>
                     <select style="width:100%; padding:10px; border-radius:8px;">
                         <option>Light</option>
                         <option>Dark</option>
@@ -214,7 +214,7 @@
                 </div>
 
                 <div class="form-group">
-                    <strong>Language</strong>
+                    <strong style="font-size: 14px;">Language</strong>
                     <select style="width:100%; padding:10px; border-radius:8px;">
                         <option>English</option>
                         <option>Filipino</option>

@@ -392,6 +392,10 @@
             font-size: 24px;
         }
 
+        .approved-tab{
+            color: green;
+        }
+
         .approve-style .modal-icon{
             background: #d9f3dc;
             color: green;
@@ -411,7 +415,8 @@
 
         <!-- HEADER -->
         <div class="header">
-            <h1>Request Room</h1>
+           
+        <h1 style='font-size: 30px; color: #8b0000; padding-bottom: 15px;'>Request Room</h1>
         </div>
 
         <!-- TABS -->
@@ -632,110 +637,82 @@
 
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
-    // ===== VIEW DETAILS (your old code) =====
-    const detailButtons = document.querySelectorAll('.details-btn');
+    let selectedCard = null;
+
     const detailsPanel = document.getElementById('requestDetails');
 
-    detailButtons.forEach(button => {
-        button.addEventListener('click', () => {
+    // ===== OPEN DETAILS =====
+    document.querySelectorAll('.details-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
 
             detailsPanel.classList.add('active');
 
-            document.getElementById('detailName').innerText = button.dataset.name;
-            document.getElementById('detailRoom').innerText = button.dataset.room;
-            document.getElementById('detailDate').innerText = button.dataset.date;
-            document.getElementById('detailTime').innerText = button.dataset.time;
-            document.getElementById('detailPurpose').innerText = button.dataset.purpose;
+            document.getElementById('detailName').innerText = btn.dataset.name;
+            document.getElementById('detailRoom').innerText = btn.dataset.room;
+            document.getElementById('detailDate').innerText = btn.dataset.date;
+            document.getElementById('detailTime').innerText = btn.dataset.time;
+            document.getElementById('detailPurpose').innerText = btn.dataset.purpose;
 
+            // store selected card for later action
+            selectedCard = btn.closest('.request-card');
         });
     });
 
-    // ===== TAB SWITCHING =====
-const tabs = document.querySelectorAll('.request-tabs button');
-const contents = document.querySelectorAll('.tab-content');
+    // ===== OPEN MODAL (APPROVE / REJECT) =====
+    document.querySelectorAll('.action-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
 
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
+            selectedCard = btn.closest('.request-card');
 
-        // REMOVE ACTIVE LINE
-        tabs.forEach(t => t.style.borderBottom = "none");
-
-        // ADD LINE TO CLICKED TAB
-        tab.style.borderBottom = "3px solid #8b0000";
-
-        // HIDE ALL CONTENT
-        contents.forEach(c => c.style.display = "none");
-
-        // SHOW SELECTED
-        if(tab.classList.contains('pending-tab')){
-            document.querySelector('[data-tab="pending"]').style.display = "block";
-        }
-        else if(tab.classList.contains('approved-tab')){
-            document.querySelector('[data-tab="approved"]').style.display = "block";
-        }
-        else if(tab.classList.contains('rejected-tab')){
-            document.querySelector('[data-tab="rejected"]').style.display = "block";
-        }
-
-    });
-});
-
-// UPDATE DETAILS ACTION BUTTONS
-const approveBtn = document.querySelector('.details-buttons .approve-btn');
-const rejectBtn = document.querySelector('.details-buttons .reject-btn');
-
-approveBtn.dataset.name = button.dataset.name;
-approveBtn.dataset.room = button.dataset.room;
-approveBtn.dataset.date = button.dataset.date;
-approveBtn.dataset.time = button.dataset.time;
-approveBtn.dataset.purpose = button.dataset.purpose;
-
-rejectBtn.dataset.name = button.dataset.name;
-rejectBtn.dataset.room = button.dataset.room;
-rejectBtn.dataset.date = button.dataset.date;
-rejectBtn.dataset.time = button.dataset.time;
-rejectBtn.dataset.purpose = button.dataset.purpose;
-
-const confirmBtn = document.getElementById('confirmBtn');
-
-if(button.dataset.action === "approve"){
-    confirmBtn.innerText = "Yes, Approve";
-} else {
-    confirmBtn.innerText = "Yes, Reject";
-}
-
-    // ===== APPROVE / REJECT =====
-    const actionButtons = document.querySelectorAll('.action-btn');
-    const modal = document.getElementById('modalOverlay');
-
-    actionButtons.forEach(button => {
-        button.addEventListener('click', () => {
-
+            const modal = document.getElementById('modalOverlay');
             modal.style.display = "flex";
 
-            document.getElementById('mName').innerText = button.dataset.name;
-            document.getElementById('mRoom').innerText = button.dataset.room;
-            document.getElementById('mDate').innerText = button.dataset.date;
-            document.getElementById('mTime').innerText = button.dataset.time;
-            document.getElementById('mPurpose').innerText = button.dataset.purpose;
+            document.getElementById('mName').innerText = btn.dataset.name;
+            document.getElementById('mRoom').innerText = btn.dataset.room;
+            document.getElementById('mDate').innerText = btn.dataset.date;
+            document.getElementById('mTime').innerText = btn.dataset.time;
+            document.getElementById('mPurpose').innerText = btn.dataset.purpose;
 
-            if(button.dataset.action === "approve"){
-                document.getElementById('modalTitle').innerText = "Approve Request";
-                document.getElementById('rejectFields').style.display = "none";
+            const title = document.getElementById('modalTitle');
+            const confirmBtn = document.getElementById('confirmBtn');
+            const rejectFields = document.getElementById('rejectFields');
+
+            if (btn.dataset.action === "approve") {
+                title.innerText = "Approve Request";
+                confirmBtn.innerText = "Yes, Approve";
+                confirmBtn.dataset.action = "approve";
+                rejectFields.style.display = "none";
             } else {
-                document.getElementById('modalTitle').innerText = "Reject Request";
-                document.getElementById('rejectFields').style.display = "block";
+                title.innerText = "Reject Request";
+                confirmBtn.innerText = "Yes, Reject";
+                confirmBtn.dataset.action = "reject";
+                rejectFields.style.display = "block";
             }
-
         });
+    });
+
+    // ===== CONFIRM ACTION =====
+    document.getElementById('confirmBtn').addEventListener('click', function () {
+
+        if (!selectedCard) return;
+
+        const action = this.dataset.action;
+
+        if (action === "approve") {
+            document.querySelector('[data-tab="approved"]').appendChild(selectedCard);
+        } else {
+            document.querySelector('[data-tab="rejected"]').appendChild(selectedCard);
+        }
+
+        document.getElementById('modalOverlay').style.display = "none";
     });
 
 });
 
-// Close modal (outside is fine)
-function closeModal(){
+// ===== CLOSE MODAL =====
+function closeModal() {
     document.getElementById('modalOverlay').style.display = "none";
 }
 </script>

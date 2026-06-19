@@ -12,11 +12,15 @@
     
 
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f6fa;
-        }
+        body{
+    background:#f5f6fa;
+    font-family:'Poppins', sans-serif;
+}
+
+/* FORCE ALL ELEMENTS */
+*{
+    font-family:'Poppins', sans-serif;
+}
 
         .container {
             display: flex;
@@ -24,13 +28,13 @@
 
         .main-content {
             margin-left: 250px; /* adjust based sa sidebar width mo */
-            padding: 30px;
-            width: 100%;
+            padding: 25px;
+            width: 90%;
         }
 
         .card {
             background: #fff;
-            padding: 25px;
+            padding: 40px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.05);
         }
@@ -58,9 +62,10 @@
 
         .form-group input,
         .form-group select {
-            padding: 10px;
+            padding: 11px;
             border: 1px solid #ccc;
-            border-radius: 6px;
+            border-radius: 7px;
+            width: 90%;
         }
 
         .full-width {
@@ -97,6 +102,12 @@
             background: #b30000;
             color: #fff;
         }
+        .form-group label {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+}
     </style>
 </head>
 
@@ -113,48 +124,46 @@
                 <div class="form-grid">
 
                     <div class="form-group">
-                        <label>Full Name</label>
-                        <input type="text" required>
-                    </div>
+    <label for="fullname">Full Name</label>
+    <input type="text" id="fullname" name="fullname" placeholder="Enter full name" required>
+</div>
 
-                    <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" required>
-                    </div>
+<div class="form-group">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="Enter email" required>
+</div>
 
-                    <div class="form-group">
-                        <label>Phone Number</label>
-                        <input type="text">
-                    </div>
+<div class="form-group">
+    <label for="phone">Phone Number</label>
+    <input type="text" id="phone" name="phone" placeholder="Enter phone number">
+</div>
 
-                    <div class="form-group">
-                        <label>Role</label>
-                        <select required>
-                            <option value="">Select role</option>
-                            <option>Admin</option>
-                            <option>Student</option>
-                        </select>
-                    </div>
+<div class="form-group">
+    <label for="role">Role</label>
+    <select id="role" name="role" required>
+        <option value="">Select role</option>
+        <option>Admin</option>
+        <option>Student</option>
+    </select>
+</div>
 
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" required>
-                    </div>
+<div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Enter password" required>
+</div>
 
-                    <div class="form-group">
-                        <label>Confirm Password</label>
-                        <input type="password" required>
-                    </div>
+<div class="form-group">
+    <label for="confirm_password">Confirm Password</label>
+    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm password" required>
+</div>
 
-                    <div class="form-group">
-                        <label>Status</label>
-                        <select>
-                            <option>Active</option>
-                            <option>Disabled</option>
-                        </select>
-                    </div>
-
-                </div>
+<div class="form-group">
+    <label for="status">Status</label>
+    <select id="status" name="status">
+        <option>Active</option>
+        <option>Disabled</option>
+    </select>
+</div>
 
                 <!-- ✅ PERMISSIONS -->
                 <div class="permissions">

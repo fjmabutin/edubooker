@@ -132,7 +132,7 @@ body{
     </div>
 
     <!-- ROOM 1 -->
-    <a href="roomDetails.php" style="text-decoration:none; color:inherit;">
+    <a href="roomRequestForm.php" style="text-decoration:none; color:inherit;">
     <div class="room-card">
 
         <div class="room-left">
@@ -152,7 +152,7 @@ body{
     </a>
 
     <!-- ROOM 2 -->
-    <a href="roomDetails.php" style="text-decoration:none; color:inherit;">
+    <a href="roomRequestForm.php" style="text-decoration:none; color:inherit;">
     <div class="room-card">
 
         <div class="room-left">
@@ -173,7 +173,7 @@ body{
     </a>
 
     <!-- ROOM 3 -->
-    <a href="roomDetails.php" style="text-decoration:none; color:inherit;">
+    <a href="roomRequestForm.php" style="text-decoration:none; color:inherit;">
     <div class="room-card">
 
         <div class="room-left">
@@ -194,7 +194,7 @@ body{
     </a>
 
     <!-- ROOM 4 -->
-    <a href="roomDetails.php" style="text-decoration:none; color:inherit;">
+    <a href="roomRequestForm.php" style="text-decoration:none; color:inherit;">
     <div class="room-card">
 
         <div class="room-left">
@@ -214,7 +214,7 @@ body{
     </div>
     </a>
 
-    <a href="roomDetails.php" style="text-decoration:none; color:inherit;">
+    <a href="roomRequestForm.php" style="text-decoration:none; color:inherit;">
 <div class="room-card">
 
     <div class="room-left">
@@ -233,7 +233,7 @@ body{
 </div>
 </a>
 
-<a href="roomDetails.php" style="text-decoration:none; color:inherit;">
+<a href="roomRequestForm.php" style="text-decoration:none; color:inherit;">
 <div class="room-card">
 
     <div class="room-left">
@@ -253,7 +253,7 @@ body{
 </div>
 </a>
 
-<a href="roomDetails.php" style="text-decoration:none; color:inherit;">
+<a href="roomRequestForm.php" style="text-decoration:none; color:inherit;">
 <div class="room-card">
 
     <div class="room-left">
@@ -274,7 +274,7 @@ body{
 </a>
 
 
-<a href="roomDetails.php" style="text-decoration:none; color:inherit;">
+<a href="roomRequestForm.php" style="text-decoration:none; color:inherit;">
 <div class="room-card">
 
     <div class="room-left">
@@ -294,7 +294,7 @@ body{
 </div>
 </a>
 
-<a href="roomDetails.php" style="text-decoration:none; color:inherit;">
+<a href="roomRequestForm.php" style="text-decoration:none; color:inherit;">
 <div class="room-card">
 
     <div class="room-left">
@@ -315,7 +315,7 @@ body{
 </a>
 
 
-<a href="roomDetails.php" style="text-decoration:none; color:inherit;">
+<a href="roomRequestForm.php" style="text-decoration:none; color:inherit;">
 <div class="room-card">
 
     <div class="room-left">

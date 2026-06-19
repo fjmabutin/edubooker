@@ -260,7 +260,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <div class="logout-actions">
                 <button class="logout-cancel-btn" onclick="closeLogout()">Cancel</button>
                 <!-- Cant find logout.php in my files -->
-                <button class="logout-confirm-btn" onclick="window.location.href='/edubooker/logout.php'">Yes, Logout</button>
+               <button class="logout-confirm-btn" onclick="window.location.href='../logout.php'">
+    Yes, Logout
+</button>
             </div>
         </div>
     </div>

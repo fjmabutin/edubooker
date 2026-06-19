@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>User Login</title>
 
     <link rel="stylesheet" href="../style/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -44,7 +44,7 @@
 
 
             <!-- FORM -->
-            <form class="login-form">
+           <form action="userDashboard.php" method="GET" class="login-form">
 
                 <!-- EMAIL -->
                 <div class="input-group">
@@ -73,7 +73,7 @@
 
                 <div class="forgot-password">
 
-    <a href="forgotPassword.php">
+   <a href="../forgotPass.php">
         Forgot Password?
     </a>
 
@@ -81,10 +81,8 @@
 
                 <!-- LOGIN BUTTON -->
                 <button type="submit" class="login-submit-btn">
-                      <a href="users/dashboard.php">
-                    LOGIN
-                  
-                </button>
+    LOGIN
+</button>
 
             </form>
 
@@ -93,7 +91,7 @@
             <p class="signup-text">
                 Don’t have an account?
 
-                <a href="signUp.php">
+                <a href="../signUp.php">
                     Create an account
                 </a>
             </p>

@@ -67,7 +67,7 @@
 
 
                 <!-- FACULTY -->
-                <a href="adminLogin.php" class="role-box">
+                <a href="admin/adminLogin.php" class="role-box">
 
                     <div class="role-content">
 
@@ -91,7 +91,7 @@
 
 
                 <!-- STUDENT -->
-                <a href="login.php" class="role-box active-role">
+                <a href="users/userLogin.php" class="role-box active-role">
 
                     <div class="role-content">
 

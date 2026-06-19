@@ -66,7 +66,7 @@
                     <h2 class="panel-title">How It Works</h2>
  
                     <p class="panel-intro">
-                        EduBooker simplifies classroom reservations for students, faculty, and administrators.
+                        EduBooker simplifies classroom management for students, faculty, and administrators.
                     </p>
  
                     <div class="how-steps">
@@ -75,14 +75,14 @@
                             <div class="step-badge">01</div>
                             <div class="step-body">
                                 <h3>Browse Available Rooms</h3>
-                                <p>View classrooms and facilities that are available for reservation.</p>
+                                <p>View classrooms and facilities that are available for class.</p>
                             </div>
                         </div>
  
                         <div class="how-step">
                             <div class="step-badge">02</div>
                             <div class="step-body">
-                                <h3>Submit a Reservation Request</h3>
+                                <h3>Submit a Request</h3>
                                 <p>Select your preferred room, date, and time, then submit your booking request.</p>
                             </div>
                         </div>
@@ -99,13 +99,13 @@
                             <div class="step-badge">04</div>
                             <div class="step-body">
                                 <h3>Manage Your Bookings</h3>
-                                <p>Track reservation status, view schedules, and receive updates in real time.</p>
+                                <p>Track your request status, view schedules, and receive updates in real time.</p>
                             </div>
                         </div>
  
                     </div>
  
-                    <p class="panel-cta">Start reserving classrooms efficiently with EduBooker today!</p>
+                    <p class="panel-cta">Start managing classrooms efficiently with EduBooker today!</p>
  
                 </div>
             </div>
@@ -119,8 +119,8 @@
                     <h2 class="panel-title">About EduBooker</h2>
  
                     <p class="panel-intro">
-                        EduBooker is a classroom reservation and management platform designed to make
-                        scheduling educational spaces simple, organized, and efficient.
+                        EduBooker is a classroom management platform designed to make
+                        managing educational spaces simple, organized, and efficient.
                     </p>
  
                     <p class="panel-text">
@@ -131,9 +131,9 @@
                     <div class="about-features">
                         <h3 class="features-heading">Our Features</h3>
                         <ul class="features-list">
-                            <li>Easy classroom reservation</li>
+                            <li>Easy classroom management</li>
                             <li>Real-time availability tracking</li>
-                            <li>Reservation approval workflow</li>
+                            <li>Request approval workflow</li>
                             <li>Schedule management</li>
                             <li>User-friendly interface</li>
                         </ul>

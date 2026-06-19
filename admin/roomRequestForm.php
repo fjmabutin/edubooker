@@ -9,12 +9,520 @@ session_start();
 <title>Room Request Form</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="../styles/sidebar.css">
+<link rel="stylesheet" href="../styles/style.css">
 
 <style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5f5;
+}
+
+.system-container{
+    display: flex;
+}
+
+.nav-links{
+    list-style: none;
+}
+
+.nav-links li{
+    margin-bottom: 15px;
+}
+
+.nav-links li a{
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nav-links li a{
+    font-size: 14px;
+}
+
+.nav-links li a:hover,
+.nav-links .active a{
+    background: rgba(255,255,255,0.2);
+}
+
+
+/* MAIN CONTENT */
+
+.main-content{
+    margin-left: 220px;
+    width: calc(100% - 220px);
+    padding: 40px;
+}
+
+
+/* TOP HEADER */
+
+.top-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.header-text h1{
+    color: #8b0000;
+    font-size: 45px;
+}
+
+.header-text p{
+    color: #9b6d6d;
+    font-size: 20px;
+}
+
+.header-icons{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.header-icons i{
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.profile img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+/* DASHBOARD CARDS */
+
+.dashboard-cards{
+    display: flex;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.card{
+    width: 220px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid #ddd;
+}
+
+.card h3{
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.card h1{
+    font-size: 40px;
+}
+
+.pending-text{
+    color: orange;
+}
+
+/* ACTIVITY CONTAINER */
+
+.activity-container{
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+}
+
+.activity-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.activity-header h2{
+    color: #8b0000;
+    font-size: 35px;
+}
+
+.search-box{
+    position: relative;
+}
+
+.search-box input{
+    width: 250px;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #bbb;
+    outline: none;
+}
+
+.search-box i{
+    position: absolute;
+    right: 15px;
+    top: 12px;
+}
+
+
+/* TABLE */
+
+.activity-table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.activity-table th{
+    text-align: left;
+    padding: 20px;
+    border-top: 2px solid #ccc;
+    border-bottom: 1px solid #ddd;
+}
+
+.activity-table td{
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+
+/* STATUS */
+
+.status{
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.approved{
+    background: #d8f3dc;
+    color: green;
+}
+
+.pending{
+    background: #fff3cd;
+    color: #d39e00;
+}
+
+.rejected{
+    background: #f8d7da;
+    color: crimson;
+}
+
+/* REQUEST CONTAINER */
+
+.request-container{
+    display: flex;
+    gap: 20px;
+}
+
+
+/* LEFT SIDE */
+
+.request-list{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* CARD */
+
+.request-card{
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.request-user{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.request-user img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.request-user h3{
+    font-size: 18px;
+}
+
+.request-user p{
+    color: #777;
+    font-size: 14px;
+}
+
+
+.request-room h3{
+    font-size: 22px;
+}
+
+.request-room p,
+.request-room span{
+    color: #666;
+    font-size: 14px;
+}
+
+
+.request-purpose h3{
+    margin-bottom: 8px;
+}
+
+
+.request-actions{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.action-buttons{
+    display: flex;
+    gap: 10px;
+}
+
+
+.approve-btn{
+    background: #d8f3dc;
+    color: green;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.reject-btn{
+    background: #ffd6dc;
+    color: crimson;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.details-btn{
+    border: 1px solid #8b0000;
+    background: transparent;
+    color: #8b0000;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+/* RIGHT SIDE */
+
+.request-details{
+    width: 350px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 25px;
+
+    height: fit-content;
+}
+
+
+.request-details h2{
+    margin-bottom: 25px;
+    color: #8b0000;
+}
+
+
+.details-profile{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.details-profile img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+
+.pending-status{
+    background: #ffe0e0;
+    color: crimson;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+
+.details-info{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.info-group label{
+    font-size: 13px;
+    color: #888;
+}
+
+.info-group p{
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+
+.details-buttons{
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+#overlay{
+    position: fixed;
+    top: 0;
+    left: 220px;
+    width: calc(100% - 220px);
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 998;
+}
+
+#logoutModal{
+    position: fixed;
+    top: 50%;
+    left: calc(50% + 110px);
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    display: none;
+    z-index: 1001;
+}
+
+/* ============================= */
+/* ADDED FEATURES (NEW) */
+/* ============================= */
+
+/* TABLE SCROLL */
+.table-wrapper {
+    max-height: 300px;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+
+/* FIXED HEADER */
+.activity-table thead th {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 2;
+}
+
+.activity-table thead {
+    background: white;
+}
+
+/* AVAILABLE TEXT */
+.available-text{
+    color: green;
+}
+
+/* NOTIFICATION */
+.notif-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.notif-dot {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 8px;
+    height: 8px;
+    background: red;
+    border-radius: 50%;
+}
+
+.notif-box {
+    position: absolute;
+    top: 25px;
+    right: 0;
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 10px;
+    display: none;
+    z-index: 1000;
+}
+
+.notif-box h4 {
+    margin: 5px 10px;
+    color: #8b0000;
+}
+
+.notif-item {
+    padding: 10px;
+    border-radius: 8px;
+    margin: 5px 0;
+    transition: 0.2s;
+}
+
+.notif-item:hover {
+    background: #f5f5f5;
+}
+
+.notif-item.unread {
+    background: #ffffff;
+    border-left: 2px solid gray;
+}
+
+.notif-item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.notif-item span {
+    font-size: 12px;
+    color: gray;
+}
+
 body{
     background:#f5f6fa;
     font-family:'Poppins', sans-serif;
+}
+
+.main-content{
+    margin-left:220px !important;
+    padding:35px;
 }
 
 /* FORCE ALL ELEMENTS */
@@ -22,6 +530,9 @@ body{
     font-family:'Poppins', sans-serif;
 }
 
+.main-content{
+    margin-left:240px; /* adjust mo lang */
+}
 /* MAIN CARD */
 .container{
     max-width:900px;
@@ -30,7 +541,9 @@ body{
     padding:50px;
     border-radius:14px;
     box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    
 }
+
 
 /* TITLE */
 .title{
@@ -113,7 +626,9 @@ textarea{
 <body>
 <?php include_once '../includes/sidebar.php'; ?>
 
-<div class="container">
+
+<div class="main-content">
+    <div class="container">
 
     <div class="title">Room Request</div>
     <p style="margin-bottom:25px; color:#666;">
@@ -179,6 +694,7 @@ textarea{
     </form>
 
 
+</div>
 </div>
 </body>
 </html>

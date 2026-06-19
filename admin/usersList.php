@@ -83,6 +83,7 @@
         .card h4{
             font-size: 14px;
             margin-bottom: 15px;
+             font-weight: 500; /* or 300 for lighter */
         }
 
         .card h1{
@@ -116,6 +117,7 @@
             border-radius: 8px;
             outline: none;
         }
+        
 
         table{
             width: 100%;
@@ -256,17 +258,17 @@
         <div class="dashboard-cards">
             <div class="card">
                 <h4>Total Users</h4>
-                <h1>30</h1>
+                <h1>264</h1>
             </div>
 
             <div class="card">
                 <h4 style="color:#2d5be3;">Students</h4>
-                <h1>67</h1>
+                <h1>114</h1>
             </div>
 
             <div class="card">
                 <h4 style="color:#557c2d;">Faculty / Staff</h4>
-                <h1>15</h1>
+                <h1>150</h1>
             </div>
         </div>
 
@@ -277,7 +279,7 @@
 
                 <div class="search-box">
                     <input type="text" placeholder="Search user...">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                
                 </div>
 
                 <table>
@@ -306,11 +308,11 @@
                             <button class="action-btn"
                                 data-name="Angel Hearth Miole"
                                 data-role="Student"
-                                data-email="hatdog@gmail.com"
+                                data-email="angelhearth51@gmail.com"
                                 data-department="BS Information"
                                 data-studentid="0905-0909-MN-0"
                                 data-phone="09011062831"
-                                data-status="ACTIVE">
+                                data-status="DISABLED">
                                 <i class="fa-solid fa-bars"></i>
                             </button>
                             </td>
@@ -339,6 +341,104 @@
                             </button>
                             </td>
                         </tr>
+
+                        <tr>
+    <td>
+        <div class="user-info">
+            <img src="../assets/LovelyRayne.png" alt="LOVELY">
+            <span>Lovely Rayne Macasaet</span>
+        </div>
+    </td>
+    <td>Student</td>
+    <td>BS Information Tech</td>
+    <td><span class="active-status">ACTIVE</span></td>
+    <td>
+        <button class="action-btn"
+            data-name="Lovely Rayne Macasaet"
+            data-role="Student"
+            data-email="lovely@gmail.com"
+            data-department="BS Information Tech"
+            data-studentid="STU-2026-001"
+            data-phone="09123456789"
+            data-status="ACTIVE">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <div class="user-info">
+            <img src="../assets/IrvenJr.png" alt="IRVEN">
+            <span>Irven Macalam Jr.</span>
+        </div>
+    </td>
+    <td>Faculty</td>
+    <td>IT Department</td>
+    <td><span class="active-status">ACTIVE</span></td>
+    <td>
+        <button class="action-btn"
+            data-name="Irven Macalam Jr."
+            data-role="Faculty"
+            data-email="irven@gmail.com"
+            data-department="IT Department"
+            data-studentid="FAC-2026-001"
+            data-phone="09111222333"
+            data-status="ACTIVE">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <div class="user-info">
+            <img src="../assets/LarizAnne.png" alt="LARIZ">
+            <span>Lariz Anne Mendoza</span>
+        </div>
+    </td>
+    <td>Student</td>
+    <td>BS Information Tech</td>
+    <td><span class="disabled-status">DISABLED</span></td>
+    <td>
+        <button class="action-btn"
+            data-name="Lariz Anne Mendoza"
+            data-role="Student"
+            data-email="lariz@gmail.com"
+            data-department="BS Information Tech"
+            data-studentid="STU-2026-002"
+            data-phone="09987654321"
+            data-status="DISABLED">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <div class="user-info">
+            <img src="../assets/FrancineJoy.png" alt="FRANCINE">
+            <span>Francine Joy D. Mabutin</span>
+        </div>
+    </td>
+    <td>Admin</td>
+    <td>Admin Office</td>
+    <td><span class="active-status">ACTIVE</span></td>
+    <td>
+        <button class="action-btn"
+            data-name="Francine Joy D. Mabutin"
+            data-role="Admin"
+            data-email="francine@gmail.com"
+            data-department="Admin Office"
+            data-studentid="ADM-2026-001"
+            data-phone="09000000000"
+            data-status="ACTIVE">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </td>
+</tr>
+
+
                     </tbody>
                 </table>
             </div>
@@ -349,12 +449,12 @@
                 <h2>User Profile</h2>
 
                 <div class="profile-top">
-                    <img src="../assets/defaultProfile.png" alt="default">
+                    <img src="../assets/AngelHearth.png" alt="default">
 
                     <div>
                         <h3 id="profileName">User Name</h3>
                         <p id="profileRole">Role</p>
-                        <span class="active-status" id="profileStatus">ACTIVE</span>
+                        <span class="disabled-status" id="profileStatus">DISABLED</span>
                     </div>
                 </div>
 
@@ -389,23 +489,38 @@
     </div>
 
     <script>
-        const actionButtons = document.querySelectorAll('.action-btn');
-        const userProfile = document.getElementById('userProfile');
+const actionButtons = document.querySelectorAll('.action-btn');
+const userProfile = document.getElementById('userProfile');
 
-        actionButtons.forEach(button => {
+actionButtons.forEach(button => {
 
-            button.addEventListener('click', () => {
-                userProfile.classList.add('active');
+    button.addEventListener('click', () => {
+        userProfile.classList.add('active');
 
-                document.getElementById('profileName').innerText = button.dataset.name;
-                document.getElementById('profileRole').innerText = button.dataset.role;
-                document.getElementById('profileEmail').innerText = button.dataset.email;
-                document.getElementById('profileDepartment').innerText = button.dataset.department;
-                document.getElementById('profileStudentID').innerText = button.dataset.studentid;
-                document.getElementById('profilePhone').innerText = button.dataset.phone;
-                document.getElementById('profileStatus').innerText = button.dataset.status;
-            });
-        });
+        document.getElementById('profileName').innerText = button.dataset.name;
+        document.getElementById('profileRole').innerText = button.dataset.role;
+        document.getElementById('profileEmail').innerText = button.dataset.email;
+        document.getElementById('profileDepartment').innerText = button.dataset.department;
+        document.getElementById('profileStudentID').innerText = button.dataset.studentid;
+        document.getElementById('profilePhone').innerText = button.dataset.phone;
+const imgSrc = button.closest('tr').querySelector('img').src;
+document.querySelector('.profile-top img').src = imgSrc;
+
+        // ✅ STATUS FIX (text + color)
+        const statusEl = document.getElementById('profileStatus');
+        statusEl.innerText = button.dataset.status;
+
+        // remove old styles
+        statusEl.classList.remove('active-status', 'disabled-status');
+
+        if (button.dataset.status === "ACTIVE") {
+            statusEl.classList.add('active-status');
+        } else {
+            statusEl.classList.add('disabled-status');
+        }
+    });
+
+});
     </script>
 </body>
 </html>

@@ -222,7 +222,6 @@ body{
         <div class="room-info">
             <h3>AVR 303</h3>
             <p>30 Capacity</p>
-            <small>Available for booking</small>
         </div>
     </div>
 
@@ -279,7 +278,7 @@ body{
 <div class="room-card">
 
     <div class="room-left">
-        <img src="../assets/comlab7.jpg" class="room-img">
+        <img src="../assets/comlab8.jpg" class="room-img">
         <div class="room-info">
             <h3>CHEMISTRY LAB 602</h3>
             <p>60 Capacity</p>
@@ -299,7 +298,7 @@ body{
 <div class="room-card">
 
     <div class="room-left">
-        <img src="../assets/comlab7.jpg" class="room-img">
+        <img src="../assets/comlab10.jpg" class="room-img">
         <div class="room-info">
             <h3>FACULTY ROOM 101</h3>
             <p>60 Capacity</p>
@@ -320,7 +319,7 @@ body{
 <div class="room-card">
 
     <div class="room-left">
-        <img src="../assets/comlab7.jpg" class="room-img">
+        <img src="../assets/comlab9.jpg" class="room-img">
         <div class="room-info">
             <h3>COMLAB 401</h3>
             <p>60 Capacity</p>

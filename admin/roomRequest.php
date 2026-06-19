@@ -107,9 +107,9 @@
         }
 
         .pending-tab{
-            color: #8b0000;
-            border-bottom: 3px solid #8b0000 !important;
-        }
+    color: #8b0000;
+    border-bottom: none;
+}
 
         .approved-tab{
             color: #333;
@@ -311,6 +311,7 @@
         .pending-status{
             background: #ffd7df;
             color: crimson;
+            
 
             padding: 5px 12px;
             border-radius: 20px;
@@ -381,6 +382,8 @@
             flex: 1;
         }
 
+        
+
         .modal-icon{
             width: 60px;
             height: 60px;
@@ -433,6 +436,12 @@
     flex-shrink: 0;
 }
 
+.locked-card .action-buttons{
+    display: none;
+}
+.locked-card .details-btn {
+    width: 100%;
+}
 
  </style>
 </head>
@@ -521,6 +530,7 @@
             <!-- Piczon -->
             <div class="request-card">
                 <div class="request-user">
+                    
                     <img src="../assets/Rugilzon.png">
                     <div>
                         <h3>Rugilzon Piczon</h3>
@@ -564,6 +574,7 @@
 
                     <button class="details-btn"
                         data-name="Rugilzon Piczon"
+                        data-img="../assets/Rugilzon.png"
                         data-room="COMLAB 203"
                         data-date="March 22, 2026"
                         data-time="1:00PM - 3:00PM"
@@ -619,6 +630,7 @@
 
                     <button class="details-btn"
                         data-name="Angel Hearth Miole"
+                        data-img="../assets/AngelHearth.png"
                         data-room="COMLAB 201"
                         data-date="March 21, 2026"
                         data-time="1:00PM - 3:00PM"
@@ -674,6 +686,7 @@
 
                     <button class="details-btn"
                         data-name="Dane Macnel Perez"
+                        data-img="../assets/DaneMacnel.png"
                         data-room="COMLAB 208"
                         data-date="March 21, 2026"
                         data-time="2:00PM - 10:00PM"
@@ -698,17 +711,53 @@
     </div>
 
     <!-- RIGHT SIDE -->
-    <div class="request-details" id="requestDetails">
-        <h2>Request Details</h2>
-        ...
+<div class="request-details" id="requestDetails">
+    <h2>Request Details</h2>
+
+    <div class="details-profile">
+        <img src="../assets/FrancineJoy.png" id="detailImg">
+        <div>
+            <h3 id="detailName">Francine Joy D. Mabutin</h3>
+            <p id="detailId">2025-01111-MN-0</p>
+            <span class="pending-status">Pending</span>
+        </div>
     </div>
 
+    <div class="details-info">
+        <div class="info-group">
+            <label>Room</label>
+            <p id="detailRoom">COMLAB 202</p>
+        </div>
+        <div class="info-group">
+            <label>Date</label>
+            <p id="detailDate">March 22, 2026</p>
+        </div>
+        <div class="info-group">
+            <label>Time</label>
+            <p id="detailTime">9:00AM - 11:00AM</p>
+        </div>
+        <div class="info-group">
+            <label>Purpose</label>
+            <p id="detailPurpose">Research</p>
+        </div>
+    </div>
+
+    <div class="notes-box">
+        <label>Admin Notes</label>
+        <textarea placeholder="Add notes here..."></textarea>
+    </div>
+
+    <div class="details-buttons">
+        <button class="reject-btn" id="detailRejectBtn">Reject</button>
+        <button class="approve-btn" id="detailApproveBtn">Approve</button>
+    </div>
 </div>
-<script>
+
+
+</div><script>
 document.addEventListener("DOMContentLoaded", function () {
 
     let selectedCard = null;
-
     const detailsPanel = document.getElementById('requestDetails');
 
     // ===== OPEN DETAILS =====
@@ -717,18 +766,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
             detailsPanel.classList.add('active');
 
+            // Update all detail fields
             document.getElementById('detailName').innerText = btn.dataset.name;
+            document.getElementById('detailId').innerText = btn.dataset.id || '';
             document.getElementById('detailRoom').innerText = btn.dataset.room;
             document.getElementById('detailDate').innerText = btn.dataset.date;
             document.getElementById('detailTime').innerText = btn.dataset.time;
             document.getElementById('detailPurpose').innerText = btn.dataset.purpose;
 
-            // store selected card for later action
+            // Update profile image
+            const imgEl = document.getElementById('detailImg');
+            if (btn.dataset.img) {
+                imgEl.src = btn.dataset.img;
+            }
+
             selectedCard = btn.closest('.request-card');
         });
     });
 
-    // ===== OPEN MODAL (APPROVE / REJECT) =====
+    // ===== DETAIL PANEL BUTTONS =====
+    document.getElementById('detailApproveBtn').addEventListener('click', () => {
+        if (!selectedCard) return;
+        const approvedList = document.querySelector('[data-tab="approved"] .request-list');
+        selectedCard.dataset.status = "approved";
+selectedCard.classList.add("locked-card");
+
+// remove buttons properly (optional extra safety)
+selectedCard.querySelectorAll('.action-buttons').forEach(el => el.remove());
+
+approvedList.appendChild(selectedCard);
+        detailsPanel.classList.remove('active');
+        selectedCard = null;
+    });
+
+    document.getElementById('detailRejectBtn').addEventListener('click', () => {
+        if (!selectedCard) return;
+        const rejectedList = document.querySelector('[data-tab="rejected"] .request-list');
+        selectedCard.dataset.status = "rejected";
+        selectedCard.classList.add("locked-card");
+        rejectedList.appendChild(selectedCard);
+        detailsPanel.classList.remove('active');
+        selectedCard = null;
+    });
+
+    // ===== OPEN MODAL (APPROVE / REJECT from card) =====
     document.querySelectorAll('.action-btn').forEach(btn => {
         btn.addEventListener('click', () => {
 
@@ -761,60 +842,56 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // ===== CONFIRM ACTION =====
+    // ===== CONFIRM ACTION (modal) =====
     document.getElementById('confirmBtn').addEventListener('click', function () {
 
         if (!selectedCard) return;
 
         const action = this.dataset.action;
-
         const approvedList = document.querySelector('[data-tab="approved"] .request-list');
-const rejectedList = document.querySelector('[data-tab="rejected"] .request-list');
+        const rejectedList = document.querySelector('[data-tab="rejected"] .request-list');
 
-if (action === "approve") {
-    approvedList.appendChild(selectedCard);
-} else {
-    rejectedList.appendChild(selectedCard);
-}
+        if (action === "approve") {
+            approvedList.appendChild(selectedCard);
+        } else {
+            rejectedList.appendChild(selectedCard);
+        }
+
         document.getElementById('modalOverlay').style.display = "none";
+        detailsPanel.classList.remove('active');
+        selectedCard = null;
+    });
+
+    // ===== TABS =====
+    const tabs = document.querySelectorAll('.request-tabs button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.style.borderBottom = "none");
+            tab.style.borderBottom = "3px solid currentColor";
+
+            tabContents.forEach(c => c.style.display = "none");
+
+            if (tab.classList.contains('pending-tab')) {
+                document.querySelector('[data-tab="pending"]').style.display = "block";
+            }
+            if (tab.classList.contains('approved-tab')) {
+                document.querySelector('[data-tab="approved"]').style.display = "block";
+            }
+            if (tab.classList.contains('rejected-tab')) {
+                document.querySelector('[data-tab="rejected"]').style.display = "block";
+            }
+        });
     });
 
 });
 
-const tabs = document.querySelectorAll('.request-tabs button');
-const tabContents = document.querySelectorAll('.tab-content');
-
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-
-        // remove underline
-        tabs.forEach(t => t.style.borderBottom = "none");
-
-        tab.style.borderBottom = "3px solid currentColor";
-
-        // hide all
-        tabContents.forEach(c => c.style.display = "none");
-
-        if (tab.classList.contains('pending-tab')) {
-            document.querySelector('[data-tab="pending"]').style.display = "block";
-        }
-
-        if (tab.classList.contains('approved-tab')) {
-            document.querySelector('[data-tab="approved"]').style.display = "block";
-        }
-
-        if (tab.classList.contains('rejected-tab')) {
-            document.querySelector('[data-tab="rejected"]').style.display = "block";
-        }
-    });
-});
-
-
-// ===== CLOSE MODAL =====
 function closeModal() {
     document.getElementById('modalOverlay').style.display = "none";
 }
 </script>
+
 <!-- MODAL -->
 
 <div class="modal-overlay" id="modalOverlay">

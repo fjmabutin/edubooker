@@ -60,6 +60,8 @@
             margin-bottom: 5px;
         }
 
+        
+
         .form-group input,
         .form-group select {
             padding: 11px;
@@ -108,7 +110,177 @@
     margin-bottom: 6px;
     color: #333;
 }
+
+/* =========================
+   FORCED SIDEBAR DESIGN
+========================= */
+
+.sidebar{
+    width: 230px;
+    height: 100vh;
+    background: #8b0000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    z-index: 1000;
+}
+
+/* LOGO */
+.logo-section{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.logo-section img{
+    width: 45px;
+    border-radius: 50%;
+}
+
+.logo-text h1{
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.logo-text p{
+    color: white;
+    font-size: 13px;
+}
+
+/* NAV */
+.nav-links{
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li{
+    margin-bottom: 15px;
+}
+
+.nav-links li a{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border-radius: 12px;
+    transition: 0.3s;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+/* HOVER */
+.nav-links li a:hover{
+    background: rgba(255,255,255,0.15);
+}
+
+/* ACTIVE */
+.nav-links .active a{
+    background: rgba(255,255,255,0.20);
+}
+
+/* ICONS */
+.nav-links li a i{
+    font-size: 15px;
+    width: 20px;
+}
+
+/* =========================
+   LOGOUT MODAL (GLOBAL)
+========================= */
+
+.logout-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.logout-modal {
+    background: white;
+    width: 400px;
+    border-radius: 16px;
+    padding: 30px 25px;
+    position: relative;
+}
+
+.logout-modal h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #222;
+}
+
+.logout-modal p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.logout-close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #333;
+}
+
+.logout-modal-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #ffd8df;
+    color: crimson;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 24px;
+}
+
+.logout-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.logout-actions button {
+    flex: 1;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.logout-cancel-btn {
+    background: #d9f3dc;
+    color: green;
+}
+
+.logout-confirm-btn {
+    background: #ffd8df;
+    color: crimson;
+}
+
     </style>
+
+    
 </head>
 
 <body>

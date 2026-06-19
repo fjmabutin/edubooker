@@ -1,25 +1,60 @@
 <?php
-    session_start();
+session_start();
 
-    // SAMPLE DATA (palitan mo later from database)
-    $fullName = "Dane Macnel Perez";
-    $email = "dane@gmail.com";
-    $studentId = "2025-05565-MN-0";
-    $course = "Diploma in Information Technology";
-    $status = "ENROLLED";
+if(isset($_SESSION['profile_pic'])){
+    $profilePic = $_SESSION['profile_pic'];
+} else {
+    $profilePic = "../assets/DaneMacnel.png";
+}
 
-    // HANDLE PASSWORD UPDATE (basic only)
-    if(isset($_POST['update_password'])){
-        $current = $_POST['current_password'];
-        $new = $_POST['new_password'];
+if(isset($_POST['upload_pic'])){
+    if(isset($_FILES['profile_pic']) && $_FILES['profile_pic']['error'] == 0){
 
-        // SAMPLE VALIDATION
-        if(empty($current) || empty($new)){
-            $message = "Please fill all fields.";
+        $targetDir = __DIR__ . "/../uploads/";
+        $displayPath = "/edubooker/uploads/";
+
+        $fileName = time() . "_" . basename($_FILES["profile_pic"]["name"]);
+        $targetFile = $targetDir . $fileName;
+        $displayFile = $displayPath . $fileName;
+
+        $check = getimagesize($_FILES["profile_pic"]["tmp_name"]);
+
+        if($check !== false){
+            if(move_uploaded_file($_FILES["profile_pic"]["tmp_name"], $targetFile)){
+
+                $_SESSION['profile_pic'] = $displayFile;
+                $profilePic = $displayFile;
+
+                $message = "Uploaded successfully!";
+            } else {
+                $message = "Upload failed.";
+            }
         } else {
-            $message = "Password updated successfully (demo only).";
+            $message = "Invalid image file.";
         }
     }
+}
+?>
+
+<?php
+// SAMPLE DATA
+$fullName = "Dane Macnel Perez";
+$email = "dane@gmail.com";
+$studentId = "2025-05565-MN-0";
+$course = "Diploma in Information Technology";
+$status = "ENROLLED";
+
+// HANDLE PASSWORD UPDATE
+if(isset($_POST['update_password'])){
+    $current = $_POST['current_password'];
+    $new = $_POST['new_password'];
+
+    if(empty($current) || empty($new)){
+        $message = "Please fill all fields.";
+    } else {
+        $message = "Password updated successfully (demo only).";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -80,7 +115,6 @@
             height:120px;
             border-radius:50%;
             background:#ddd;
-            background-image: url('../assets/DaneMacnel.png');
             background-size: cover;
             background-position: center;
             margin: 20px 0 5px 10px; 
@@ -138,6 +172,40 @@
     font-weight: 700;
 }
 
+.profile-wrapper{
+    position: relative;
+    display: inline-block;
+}
+
+.profile-img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:#ddd;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    position: relative;
+}
+.edit-icon{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+
+    width: 28px;
+    height: 28px;
+
+    background: #8b0000;
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+}
     </style>
 </head>
 
@@ -155,8 +223,25 @@
             <div class="profile-container">
 
                 <div>
-                    <div class="profile-img"></div>
-                        <div class="status"><?php echo $status; ?></div>
+                    <div class="profile-wrapper">
+    <form method="POST" enctype="multipart/form-data">
+        
+        <div class="profile-img"
+onclick="document.getElementById('profileUpload').click();"
+style="background-image: url('<?php echo $profilePic; ?>');">
+
+    <span class="edit-icon">
+        <i class="fa fa-pen"></i>
+    </span>
+
+</div>
+
+        <input type="file" name="profile_pic" id="profileUpload" style="display:none;">
+    </form>
+
+    <div class="status"><?php echo $status; ?></div>
+</div>
+                       
                 </div>
 
                 <div style="flex:1;">

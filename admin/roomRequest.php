@@ -405,8 +405,38 @@
             background: #ffd8df;
             color: crimson;
         }
-    </style>
+        .request-tabs button.active {
+    border-bottom: 3px solid #8b0000;
+}
+
+.request-container{
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* LEFT */
+.request-list{
+    flex: 1;
+    min-width: 0; /* IMPORTANT para hindi mag-overflow */
+}
+
+/* RIGHT */
+.request-details{
+    width: 340px;
+    flex-shrink: 0;
+}
+.request-user,
+.request-room,
+.request-purpose,
+.request-actions{
+    flex-shrink: 0;
+}
+
+
+ </style>
 </head>
+<body> 
 
 <body>
     <?php include_once '../includes/sidebar.php'; ?>
@@ -418,224 +448,262 @@
            
         <h1 style='font-size: 30px; color: #8b0000; padding-bottom: 15px;'>Request Room</h1>
         </div>
+        
+<div class="request-tabs">
+    <button class="pending-tab active">Pending</button>
+    <button class="approved-tab">Approved</button>
+    <button class="rejected-tab">Rejected</button>
+</div>
 
-        <!-- TABS -->
-        <div class="request-tabs">
-            <button class="pending-tab">
-                Pending
-            </button>
+<div class="request-container">
 
-            <button class="approved-tab">
-                Approved
-            </button>
+    <!-- LEFT SIDE -->
+    <div class="request-list">
 
-            <button class="rejected-tab">
-                Rejected
-            </button>
+        <!-- ================= PENDING ================= -->
+        <div class="tab-content" data-tab="pending" style="display:block;">
 
-        </div>
+            <!-- Mabutin -->
+            <div class="request-card">
+                <div class="request-user">
+                    <img src="../assets/FrancineJoy.png">
+                    <div>
+                        <h3>Francine Mabutin</h3>
+                        <p>2025-01111-MN-0</p>
+                    </div>
+                </div>
 
-        <!-- CONTAINER -->
-        <div class="request-container">
+                <div class="request-room">
+                    <h3>COMLAB 202</h3>
+                    <p>March 22, 2026</p>
+                    <span>9:00AM - 11:00AM</span>
+                </div>
 
-            <!-- LEFT SIDE -->
-            <div class="request-list">
+                <div class="request-purpose">
+                    <h3>Purpose</h3>
+                    <p>Research</p>
+                </div>
 
-                <!-- CARD -->
-                <div class="request-card">
+                <div class="request-actions">
+                    <div class="action-buttons">
+                        <button class="approve-btn action-btn"
+                            data-action="approve"
+                            data-name="Francine Joy D. Mabutin"
+                            data-room="COMLAB 202"
+                            data-date="March 22, 2026"
+                            data-time="9:00AM - 11:00AM"
+                            data-purpose="Research">
+                            Approve
+                        </button>
 
-                    <div class="request-user">
-                        <img src="../assets/AngelHearth.png" alt="ANGEL">
-
-                        <div>
-                            <h3>Angel Hearth Miole</h3>
-                            <p>2025-05555-MN-0</p>
-                        </div>
-
+                        <button class="reject-btn action-btn"
+                            data-action="reject"
+                            data-name="Francine Joy D. Mabutin"
+                            data-room="COMLAB 202"
+                            data-date="March 22, 2026"
+                            data-time="9:00AM - 11:00AM"
+                            data-purpose="Research">
+                            Reject
+                        </button>
                     </div>
 
-                    <div class="request-room">
+                    <button class="details-btn"
+                        data-name="Francine Joy D. Mabutin"
+                        data-room="COMLAB 202"
+                        data-date="March 22, 2026"
+                        data-time="9:00AM - 11:00AM"
+                        data-purpose="Research">
+                        View Details
+                    </button>
+                </div>
+            </div>
 
-                        <h3>COMLAB 201</h3>
-                        <p>March 21, 2026</p>
-                        <span>1:00PM - 3:00PM</span>
+            <!-- Piczon -->
+            <div class="request-card">
+                <div class="request-user">
+                    <img src="../assets/Rugilzon.png">
+                    <div>
+                        <h3>Rugilzon Piczon</h3>
+                        <p>2025-02222-MN-0</p>
+                    </div>
+                </div>
+
+                <div class="request-room">
+                    <h3>COMLAB 203</h3>
+                    <p>March 22, 2026</p>
+                    <span>1:00PM - 3:00PM</span>
+                </div>
+
+                <div class="request-purpose">
+                    <h3>Purpose</h3>
+                    <p>Presentation</p>
+                </div>
+
+                <div class="request-actions">
+                    <div class="action-buttons">
+                        <button class="approve-btn action-btn"
+                            data-action="approve"
+                            data-name="Rugilzon Piczon"
+                            data-room="COMLAB 203"
+                            data-date="March 22, 2026"
+                            data-time="1:00PM - 3:00PM"
+                            data-purpose="Presentation">
+                            Approve
+                        </button>
+
+                        <button class="reject-btn action-btn"
+                            data-action="reject"
+                            data-name="Rugilzon Piczon"
+                            data-room="COMLAB 203"
+                            data-date="March 22, 2026"
+                            data-time="1:00PM - 3:00PM"
+                            data-purpose="Presentation">
+                            Reject
+                        </button>
                     </div>
 
-                    <div class="request-purpose">
-                        <h3>Purpose</h3>
-                        <p>Group Meeting</p>
+                    <button class="details-btn"
+                        data-name="Rugilzon Piczon"
+                        data-room="COMLAB 203"
+                        data-date="March 22, 2026"
+                        data-time="1:00PM - 3:00PM"
+                        data-purpose="Presentation">
+                        View Details
+                    </button>
+                </div>
+            </div>
+
+            <!-- Miole -->
+            <div class="request-card">
+                <div class="request-user">
+                    <img src="../assets/AngelHearth.png">
+                    <div>
+                        <h3>Angel Hearth Miole</h3>
+                        <p>2025-05555-MN-0</p>
                     </div>
+                </div>
 
-                    <div class="request-actions">
+                <div class="request-room">
+                    <h3>COMLAB 201</h3>
+                    <p>March 21, 2026</p>
+                    <span>1:00PM - 3:00PM</span>
+                </div>
 
-                        <div class="action-buttons">
-                            <button class="approve-btn action-btn"
+                <div class="request-purpose">
+                    <h3>Purpose</h3>
+                    <p>Group Meeting</p>
+                </div>
+
+                <div class="request-actions">
+                    <div class="action-buttons">
+                        <button class="approve-btn action-btn"
                             data-action="approve"
                             data-name="Angel Hearth Miole"
                             data-room="COMLAB 201"
                             data-date="March 21, 2026"
                             data-time="1:00PM - 3:00PM"
                             data-purpose="Group Meeting">
-                                Approve
-                            </button>
+                            Approve
+                        </button>
 
-                            <button class="reject-btn action-btn"
+                        <button class="reject-btn action-btn"
                             data-action="reject"
                             data-name="Angel Hearth Miole"
                             data-room="COMLAB 201"
                             data-date="March 21, 2026"
                             data-time="1:00PM - 3:00PM"
                             data-purpose="Group Meeting">
-                                Reject
-                            </button>
-                        </div>
+                            Reject
+                        </button>
+                    </div>
 
-                        <button class="details-btn"
+                    <button class="details-btn"
                         data-name="Angel Hearth Miole"
                         data-room="COMLAB 201"
                         data-date="March 21, 2026"
                         data-time="1:00PM - 3:00PM"
                         data-purpose="Group Meeting">
-                            View Details
-                        </button>
+                        View Details
+                    </button>
+                </div>
+            </div>
+
+            <!-- Perez -->
+            <div class="request-card">
+                <div class="request-user">
+                    <img src="../assets/DaneMacnel.png">
+                    <div>
+                        <h3>Dane Macnel Perez</h3>
+                        <p>2025-08888-MN-0</p>
                     </div>
                 </div>
 
-                <!-- SECOND CARD -->
-                <div class="request-card">
+                <div class="request-room">
+                    <h3>COMLAB 208</h3>
+                    <p>March 21, 2026</p>
+                    <span>2:00PM - 10:00PM</span>
+                </div>
 
-                    <div class="request-user">
-                        <img src="../assets/DaneMacnel.png" alt="DANE">
+                <div class="request-purpose">
+                    <h3>Purpose</h3>
+                    <p>Class Discussion</p>
+                </div>
 
-                        <div>
-                            <h3>Dane Macnel Perez</h3>
-                            <p>2025-08888-MN-0</p>
-                        </div>
-                    </div>
-
-                    <div class="request-room">
-                        <h3>COMLAB 208</h3>
-                        <p>March 21, 2026</p>
-                        <span>2:00PM - 10:00PM</span>
-                    </div>
-
-                    <div class="request-purpose">
-                        <h3>Purpose</h3>
-                        <p>Class Discussion</p>
-                    </div>
-
-                    <div class="request-actions">
-
-                        <div class="action-buttons">
-
-                            <button class="approve-btn action-btn"
+                <div class="request-actions">
+                    <div class="action-buttons">
+                        <button class="approve-btn action-btn"
                             data-action="approve"
                             data-name="Dane Macnel Perez"
-                            data-room="COMLAB 201"
+                            data-room="COMLAB 208"
                             data-date="March 21, 2026"
-                            data-time="1:00PM - 3:00PM"
-                            data-purpose="Group Meeting">
-                                Approve
-                            </button>
+                            data-time="2:00PM - 10:00PM"
+                            data-purpose="Class Discussion">
+                            Approve
+                        </button>
 
-                            <button class="reject-btn action-btn"
+                        <button class="reject-btn action-btn"
                             data-action="reject"
                             data-name="Dane Macnel Perez"
-                            data-room="COMLAB 201"
+                            data-room="COMLAB 208"
                             data-date="March 21, 2026"
-                            data-time="1:00PM - 3:00PM"
-                            data-purpose="Group Meeting">
-                                Reject
-                            </button>
-                        </div>
+                            data-time="2:00PM - 10:00PM"
+                            data-purpose="Class Discussion">
+                            Reject
+                        </button>
+                    </div>
 
-                        <button class="details-btn"
+                    <button class="details-btn"
                         data-name="Dane Macnel Perez"
                         data-room="COMLAB 208"
                         data-date="March 21, 2026"
                         data-time="2:00PM - 10:00PM"
                         data-purpose="Class Discussion">
-                            View Details
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            
-
-            <!-- RIGHT SIDE -->
-            <div class="request-details" id="requestDetails">
-                <h2>Request Details</h2>
-
-                <div class="details-profile">
-                    <img src="../assets/DaneMacnel.png" alt="DANE">
-
-                    <div>
-                        <h3 id="detailName">
-                            Student Name
-                        </h3>
-                        <p>Student</p>
-                        <span class="pending-status">
-                            Pending
-                        </span>
-                    </div>
-                </div>
-
-                <div class="details-info">
-
-                    <div class="info-group">
-                        <strong>Room</strong>
-                        <p id="detailRoom">-</p>
-                    </div>
-
-                    <div class="info-group">
-                        <strong>Date</strong>
-                        <p id="detailDate">-</p>
-                    </div>
-
-                    <div class="info-group">
-                        <strong>Time</strong>
-                        <p id="detailTime">-</p>
-                    </div>
-
-                    <div class="info-group">
-                        <strong>Purpose</strong>
-                        <p id="detailPurpose">-</p>
-                    </div>
-                </div>
-
-                <div class="notes-box">
-                    <strong>Additional Notes</strong>
-                    <textarea placeholder="Write notes here..."></textarea>
-                </div>
-
-                <div class="details-buttons">
-
-                    <button class="approve-btn action-btn"
-                    data-action="approve"
-                    data-name="Angel Hearth Miole"
-                    data-room="COMLAB 201"
-                    data-date="March 21, 2026"
-                    data-time="1:00PM - 3:00PM"
-                    data-purpose="Group Meeting">
-                        Approve
-                    </button>
-
-                    <button class="reject-btn action-btn"
-                    data-action="reject"
-                    data-name="Angel Hearth Miole"
-                    data-room="COMLAB 201"
-                    data-date="March 21, 2026"
-                    data-time="1:00PM - 3:00PM"
-                    data-purpose="Group Meeting">
-                        Reject
+                        View Details
                     </button>
                 </div>
             </div>
+
         </div>
+
+        <!-- ================= APPROVED ================= -->
+        <div class="tab-content" data-tab="approved" style="display:none;">
+            <div class="request-list"></div>
+        </div>
+
+        <!-- ================= REJECTED ================= -->
+        <div class="tab-content" data-tab="rejected" style="display:none;">
+            <div class="request-list"></div>
+        </div>
+
     </div>
 
+    <!-- RIGHT SIDE -->
+    <div class="request-details" id="requestDetails">
+        <h2>Request Details</h2>
+        ...
+    </div>
 
+</div>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -700,16 +768,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const action = this.dataset.action;
 
-        if (action === "approve") {
-            document.querySelector('[data-tab="approved"]').appendChild(selectedCard);
-        } else {
-            document.querySelector('[data-tab="rejected"]').appendChild(selectedCard);
-        }
+        const approvedList = document.querySelector('[data-tab="approved"] .request-list');
+const rejectedList = document.querySelector('[data-tab="rejected"] .request-list');
 
+if (action === "approve") {
+    approvedList.appendChild(selectedCard);
+} else {
+    rejectedList.appendChild(selectedCard);
+}
         document.getElementById('modalOverlay').style.display = "none";
     });
 
 });
+
+const tabs = document.querySelectorAll('.request-tabs button');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+
+        // remove underline
+        tabs.forEach(t => t.style.borderBottom = "none");
+
+        tab.style.borderBottom = "3px solid currentColor";
+
+        // hide all
+        tabContents.forEach(c => c.style.display = "none");
+
+        if (tab.classList.contains('pending-tab')) {
+            document.querySelector('[data-tab="pending"]').style.display = "block";
+        }
+
+        if (tab.classList.contains('approved-tab')) {
+            document.querySelector('[data-tab="approved"]').style.display = "block";
+        }
+
+        if (tab.classList.contains('rejected-tab')) {
+            document.querySelector('[data-tab="rejected"]').style.display = "block";
+        }
+    });
+});
+
 
 // ===== CLOSE MODAL =====
 function closeModal() {

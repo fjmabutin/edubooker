@@ -103,11 +103,9 @@
 <body>
 
 <div class="container">
+<?php include_once '../includes/sidebar.php'; ?>
 
-<?php include '../includes/sidebar.php'; ?>
-
-    <!-- ✅ MAIN CONTENT -->
-    <div class="main-content">
+<div class="main-content">
         <div class="card">
             <h2>Add User</h2>
 

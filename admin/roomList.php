@@ -214,6 +214,127 @@ body{
     </div>
     </a>
 
+    <a href="roomDetails.php" style="text-decoration:none; color:inherit;">
+<div class="room-card">
+
+    <div class="room-left">
+        <img src="../assets/comlab5.jpg" class="room-img">
+        <div class="room-info">
+            <h3>AVR 303</h3>
+            <p>30 Capacity</p>
+            <small>Available for booking</small>
+        </div>
+    </div>
+
+    <div class="room-right">
+        <span class="status available">Available</span>
+        <i class="fa-solid fa-chevron-right arrow"></i>
+    </div>
+
+</div>
+</a>
+
+<a href="roomDetails.php" style="text-decoration:none; color:inherit;">
+<div class="room-card">
+
+    <div class="room-left">
+        <img src="../assets/comlab6.jpg" class="room-img">
+        <div class="room-info">
+            <h3>SCIENCE LAB 204</h3>
+            <p>55 Capacity</p>
+            <small style="color:red;">5 slots left today</small>
+        </div>
+    </div>
+
+    <div class="room-right">
+        <span class="status limited">Limited</span>
+        <i class="fa-solid fa-chevron-right arrow"></i>
+    </div>
+
+</div>
+</a>
+
+<a href="roomDetails.php" style="text-decoration:none; color:inherit;">
+<div class="room-card">
+
+    <div class="room-left">
+        <img src="../assets/comlab7.jpg" class="room-img">
+        <div class="room-info">
+            <h3> BILLIARD ROOM 505</h3>
+            <p>60 Capacity</p>
+            <small>Fully booked today</small>
+        </div>
+    </div>
+
+    <div class="room-right">
+        <span class="status full">Full Today</span>
+        <i class="fa-solid fa-chevron-right arrow"></i>
+    </div>
+
+</div>
+</a>
+
+
+<a href="roomDetails.php" style="text-decoration:none; color:inherit;">
+<div class="room-card">
+
+    <div class="room-left">
+        <img src="../assets/comlab7.jpg" class="room-img">
+        <div class="room-info">
+            <h3>CHEMISTRY LAB 602</h3>
+            <p>60 Capacity</p>
+            <small>Fully booked today</small>
+        </div>
+    </div>
+
+    <div class="room-right">
+        <span class="status full">Full Today</span>
+        <i class="fa-solid fa-chevron-right arrow"></i>
+    </div>
+
+</div>
+</a>
+
+<a href="roomDetails.php" style="text-decoration:none; color:inherit;">
+<div class="room-card">
+
+    <div class="room-left">
+        <img src="../assets/comlab7.jpg" class="room-img">
+        <div class="room-info">
+            <h3>FACULTY ROOM 101</h3>
+            <p>60 Capacity</p>
+            <small>Fully booked today</small>
+        </div>
+    </div>
+
+    <div class="room-right">
+        <span class="status full">Full Today</span>
+        <i class="fa-solid fa-chevron-right arrow"></i>
+    </div>
+
+</div>
+</a>
+
+
+<a href="roomDetails.php" style="text-decoration:none; color:inherit;">
+<div class="room-card">
+
+    <div class="room-left">
+        <img src="../assets/comlab7.jpg" class="room-img">
+        <div class="room-info">
+            <h3>COMLAB 401</h3>
+            <p>60 Capacity</p>
+            <small>Available for booking</small>
+        </div>
+    </div>
+
+    <div class="room-right">
+        <span class="status available">Available</span>
+        <i class="fa-solid fa-chevron-right arrow"></i>
+    </div>
+
+</div>
+</a>
 </div>
 
 </body>

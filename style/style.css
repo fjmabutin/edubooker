@@ -632,3 +632,194 @@ body.home .socials img:hover{
     align-items: flex-start;
     padding-top: 70px;
 }
+
+/* slider sentence part */
+.slide-track {
+    display: flex;          
+    width: 100%;
+    min-height: 600px;      
+    transition: transform 0.55s cubic-bezier(0.77, 0, 0.175, 1);
+    will-change: transform;
+}
+ 
+.slide-panel {
+    min-width: 100%;
+    flex-shrink: 0;
+}
+  
+/* SLide Clicker */
+.go-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+ 
+    background: transparent;
+    border: 2px solid #8b0000;
+    color: #8b0000;
+ 
+    padding: 9px 22px;
+    border-radius: 50px;
+ 
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+ 
+    cursor: pointer;
+    margin-bottom: 26px;
+ 
+    transition: background 0.25s, color 0.25s;
+}
+ 
+.go-back-btn:hover {
+    background: #8b0000;
+    color: white;
+}
+ 
+/* Panel COntents */
+.content-panel-inner {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+}
+ 
+.panel-title {
+    font-size: 42px !important;
+    line-height: 1.1 !important;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 14px !important;
+}
+ 
+.panel-intro {
+    font-size: 14.5px;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 22px;
+    max-width: 650px;
+}
+ 
+.panel-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.75;
+    margin-bottom: 20px;
+    max-width: 650px;
+}
+ 
+.panel-cta {
+    font-size: 14px;
+    font-weight: 600;
+    color: #8b0000;
+    margin-top: 22px;
+}
+ 
+.how-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+ 
+.how-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+ 
+.step-badge {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background: #8b0000;
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+ 
+.step-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 2px;
+}
+ 
+.step-body p {
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.6;
+}
+ 
+.about-features {
+    margin-top: 4px;
+}
+ 
+.features-heading {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+ 
+.features-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+ 
+.features-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13.5px;
+    color: #444;
+}
+ 
+.features-list li::before {
+    content: '✓';
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background: #8b0000;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* Forgot Password Notices */
+.success-notice {
+    background: #d1e7dd;
+    border: .5px solid #badbcc;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+ 
+.success-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f5132;
+    margin-bottom: 5px;
+}
+ 
+.error-notice {
+    background: #f8d7da;
+    border: .5px solid #f5c2c7;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+ 
+.error-text {
+    font-size: 12px;
+    color: #842029;
+    line-height: 1.4;
+}

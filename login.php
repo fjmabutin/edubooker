@@ -71,7 +71,7 @@
 
                 <div class="forgot-password">
 
-    <a href="forgotPassword.php">
+    <a href="forgotPass.php">
         Forgot Password?
     </a>
 

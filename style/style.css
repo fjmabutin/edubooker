@@ -63,6 +63,8 @@ body{
 
 .login a{
     text-decoration: none;
+    color: white;
+    font-size: 14px;
 }
 .login-btn{
     background: white;
@@ -543,6 +545,10 @@ body.home .socials img:hover{
     text-decoration: none;
 
     font-weight: 600;
+}
+
+.signup-text p{
+    font-weight: 400;
 }
 
 .signup-text a:hover{

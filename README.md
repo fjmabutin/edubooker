@@ -21,4 +21,10 @@ EduBooker streamlines the traditional process of classroom scheduling by providi
 
 
 Created by: 
-**Francine Joy D. Mabutin**  
+**Dane Macnel Perez**  
+**Rugilzon Piczon**  
+**Irven Macalam**  
+**Angel Miole** 
+**Lariz Mendoza**  
+**Lovely Macasaet**  
+**Francine Joy Mabutin**  

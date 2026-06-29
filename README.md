@@ -1,7 +1,24 @@
-# 🗓️ **EduBooker**
+ # 💾 **EduBooker**
 
-#**Piczon**
-    Improved readability of code in admin folder and tweaked some major and minor codes (except addUser.php)
-    Tweaked some minor codes in style and system.css inside style folder
-    Improved readability of code and added Logout function in sidebar.php inside includes folder
-    Problems: Cant find the logout.php file so the page become 404 not found
+EduBooker is a web-based classroom booking and management system designed for iTech. It allows users to view room availability, request bookings, and manage schedules efficiently in one centralized platform.
+
+🚀 Overview
+EduBooker streamlines the traditional process of classroom scheduling by providing a digital solution where students and staff can easily check availability and request reservations without conflicts or manual coordination.
+
+✨ Features
+- **📌Real-time Room Availability** – Instantly check which rooms are available
+- **📝 Booking Requests** – Submit requests for room reservations
+- **🔄 Booking Management** – Track and manage request status
+- **📊 Organized Scheduling** – Clear and structured timetable system
+- **👤 User-Friendly Interface** – Easy to use for both students and staff
+- **🔐 Secure Data Handling** – Ensures proper access and data protection 
+
+🚀 How to Run
+1. Clone the repository git clone https://github.com/your-username/edubooker.git
+2. Go to project folder cd edubooker
+3. Start your local server (XAMPP or similar)
+4. Open in browser: http://localhost/edubooker
+
+
+Created by: 
+**Francine Joy D. Mabutin**  
